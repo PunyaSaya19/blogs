@@ -1,1 +1,70 @@
 /* my css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+body {
+  background : #F6F6F6;
+  min-height: 5000px;
+}
+.bg-purple{
+  background: #700B97 !important;
+  color : #fff !important;
+}
+.my-navbar{
+  padding: 10px 28px;
+  font-family: 'Nunito', Sans-Serif;
+  background: rgba(0,0,0,0.01);
+  color: #333;
+  z-index: 99999;
+}
+.nav-head h6{
+  font-weight: 500;
+}
+.nav-info i{
+  margin-top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#carouselExampleFade {
+  height: 500px !important ;
+  position: relative;
+}
+#carouselExampleFade img {
+  width: 100%;
+  height: 500px;
+}
+
+#my-form-search {
+  position : absolute ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 75%;
+}
+
+#section {
+  padding: 5px 25px;
+}
+
+.article-category a.my-category {
+  color: #888;
+  margin-bottom: 0px;
+}
+.article-category a.my-category:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.article-category .my-tgl-blog {
+  color: #111 !important ;
+}
+
+/* mobile */
+@media(max-width : 768px){
+  .my-navbar{
+    padding: 3px 20px;
+  }
+  #section {
+    padding: 5px 20px;
+  }
+
+}
