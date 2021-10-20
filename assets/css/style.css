@@ -24,12 +24,12 @@ body {
   cursor: pointer;
 }
 #carouselExampleFade {
-  height: 500px !important ;
+  /*height: 500px !important ;*/
   position: relative;
 }
 #carouselExampleFade img {
   width: 100%;
-  height: 500px;
+  /*height: 500px;*/
 }
 
 #my-form-search {
