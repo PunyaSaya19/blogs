@@ -63,7 +63,7 @@
     
     <section id="section" class="pt-5">
       <div class="row mt-5">
-        <div class="col-md-9 col-sm-12">
+        <div class="col-lg-9 col-sm-12">
           <div class="blog-header text-center mb-3" >
             <h5 class="text-dark">
               All Blogs
@@ -71,7 +71,8 @@
           </div>
           <hr>
           <div class="blog-content">
-            <div class="row">
+            <div class="row" id="row-blog-content">
+              <!--
               <div class="col-12 col-md-4 col-lg-4">
                 <article class="article article-style-b">
                   <div class="article-header">
@@ -81,7 +82,7 @@
                   <div class="article-details">
                     <div class="article-title">
                       <h2>
-                        <a href="detail.html">
+                        <a href="detail.html" onclick="detailArticel(this)" data-id="1">
                           Excepteur sint occaecat cupidatat non proident
                         </a>
                       </h2>
@@ -101,10 +102,11 @@
                   </div>
                 </article>
               </div>
+              -->
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-12">
+        <div class="col-lg-3 col-sm-12">
           <div class="card pt-0" >
             <div class="card-header pt-0 pb-0">
               <h4 class="pt-0 text-dark">
@@ -112,14 +114,11 @@
               </h4>
             </div>
             <div class="card-body pt-0">
-              <ul class="pl-3">
-                <li class="">
-                  <a href="">
+              <ul class="pl-3" id="recent-post">
+                <li>
+                  <a href="" onclick="detailArticel(this)" data-id="">
                     Lorem ipsum dolor sit amet.
                   </a>
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </li>
               </ul>
             </div>
