@@ -6,7 +6,6 @@ const recent_post = document.getElementById("recent-post");
 const search_input = document.getElementById('search-field');
 const blog_banner = document.getElementById("blog-banner");
 document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-alert('ok')
 
 
 // action
