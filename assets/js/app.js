@@ -7,7 +7,6 @@ const search_input = document.getElementById('search-field');
 const blog_banner = document.getElementById("blog-banner");
 
 
-
 // action
 window.onscroll = () => {
   if (window.pageYOffset > 0) {
