@@ -15,6 +15,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/stisla.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/btn-social-media.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -39,7 +40,7 @@
     <div class="layer-banner"></div>
     <form action="#" id="my-form-search" class="shadow">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog Here..." id="search-field">
+        <input type="text" class="form-control" placeholder="Search Blog Here..." id="search-field" autocomplete="off">
         <div class="input-group-prepend">
           <div class="input-group-text bg-primary" id="my-btn-search" onclick="searchBlogs()">
             <i class="fas fa-search text-white"></i>
@@ -100,20 +101,34 @@
         </div>
       </div>
       <div class="col-lg-3 col-sm-12">
-        <div class="card pt-0">
-          <div class="card-header pt-0 pb-0">
-            <h4 class="pt-0 text-dark">
+        <div class="row">
+          <div class="col-sm-12 col-md-7 col-lg-12 bg-white pt-2 shadow-sm mb-2">
+            <h6 class="text-center">
               Recent Post
-            </h4>
-          </div>
-          <div class="card-body pt-0">
-            <ul class="pl-3" id="recent-post">
+            </h6>
+            <ul id="recent-post">
               <li>
                 <a href="" onclick="detailArticel(this)" data-id="">
                   Lorem ipsum dolor sit amet.
                 </a>
               </li>
             </ul>
+          </div>
+          <div class="col-sm-12 col-md-5 col-lg-12 bg-white pt-2 shadow-sm pb-2">
+            <h6 class="text-center">
+              Contact Developer
+            </h6>
+            <div class="social-media w-100 d-flex justify-content-center">
+              <a href="#" class="btn btn-social-icon mr-1 btn-facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="btn btn-social-icon mr-1 btn-wa bg-success">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="btn btn-social-icon mr-1 btn-github">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>

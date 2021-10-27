@@ -5,8 +5,8 @@
 }
 body {
   background : #F6F6F6;
-  min-height: 5000px;
 }
+
 .bg-navbar{
   background: #113CFC !important;
   color : #fff !important;
@@ -40,7 +40,7 @@ body {
   position: relative;
   background-image: url('../img/banner.jpg');
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: cover; 
   background-position: center;
 }
 

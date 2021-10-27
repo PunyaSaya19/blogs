@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    scroll-behavior: smooth;
+}
+
+#my-navbar {
+    background: #113CFC;
+}
+#my-navbar a {
+    color: #fff !important;
+    text-decoration: none;
+}
+#my-navbar a h6 {
+    font-weight: 500;
+}
+
+#section-blog {
+    font-family: 'Poppins', sans-serif;
+}
+
+#section-blog .blog-title {
+    font-family: 'Nunito';
+}
+
+.article-category {
+    margin-bottom: 20px;
+}
+
+.article-category a.my-category {
+    color: #888;
+    margin-bottom: 0px;
+}
+.article-category a.my-category:hover {
+    text-decoration: underline;
+    color: #333;
+}
+  
+.article-category .my-tgl-blog {
+    color: #555 !important ;
+}
+.blog-img img {
+    height: 500px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+/* mobile */
+@media(max-width : 768px) {
+    .blog-img img {
+        height: 300px;
+    }
+    
+}
+
+
+
+
+
+
