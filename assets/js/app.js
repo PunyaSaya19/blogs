@@ -1,6 +1,7 @@
 // inisialisasi variabel
 const my_navbar = document.getElementById("my-navbar");
 const cek_artikel = window.localStorage.getItem("articel");
+const cek_category = window.localStorage.getItem("category");
 const row_blog_content = document.getElementById("row-blog-content");
 const recent_post = document.getElementById("recent-post");
 const search_input = document.getElementById('search-field');
@@ -18,6 +19,9 @@ window.onscroll = () => {
 window.addEventListener("DOMContentLoaded", () => {
   if (cek_artikel == null) {
     createFirstArticel();
+  }
+  if (cek_category == null) {
+    createFirstCategory();
   }
   showAllArticel();
   showRecentPost();
@@ -51,70 +55,35 @@ function createFirstArticel() {
     },
     {
       id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 2",
-      category: "other",
+      title: "Welcome To PunyaSaya Blogs 2 (category : programing)",
+      category: "programing",
       created_at: getDateNow(),
       image: "other.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
     },
     {
       id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 3",
-      category: "other",
+      title: "Welcome To PunyaSaya Blogs 3 (category : programing)",
+      category: "programing",
       created_at: getDateNow(),
       image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
+      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p>"
     },
     {
       id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 4",
-      category: "other",
-      created_at: getDateNow(),
-      image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
-    },
-    {
-      id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 5",
-      category: "other",
-      created_at: getDateNow(),
-      image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
-    },
-    {
-      id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 6",
-      category: "other",
-      created_at: getDateNow(),
-      image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
-    },
-    {
-      id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 7",
-      category: "other",
-      created_at: getDateNow(),
-      image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
-    },
-    {
-      id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 8",
-      category: "other",
-      created_at: getDateNow(),
-      image: "other.jpg",
-      content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
-    },
-    {
-      id: randomId(),
-      title: "Welcome To PunyaSaya Blogs 9",
-      category: "other",
+      title: "Welcome To PunyaSaya Blogs 4 (category : music)",
+      category: "music",
       created_at: getDateNow(),
       image: "other.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
     },
   ];
   window.localStorage.setItem("articel", JSON.stringify(data));
+}
+function createFirstCategory() {
+  const data = JSON.stringify(["other", "programing", "music", "news"]);
+  window.localStorage.setItem("category", data);
+  
 }
 function showAllArticel() {
   let articel = JSON.parse(window.localStorage.getItem("articel"));
@@ -149,13 +118,13 @@ function myTemplate(data) {
                   <div class="article-details">
                     <div class="article-title">
                       <h2>
-                        <a href="#" onclick="detailArticel(this)" data-id="${d.id}">
+                        <a href="detail.html" onclick="detailArticel(this)" data-id="${d.id}">
                           ${d.title}
                         </a>
                       </h2>
                     </div>
                     <div class="article-category">
-                      <a href="#" class="my-category">
+                      <a href="category.html" class="my-category" onclick="detailCategory(this)" data-category="${d.category}">
                         #${d.category}
                       </a> 
                       <p class="mt-0 my-tgl-blog">
@@ -166,7 +135,7 @@ function myTemplate(data) {
                       ${content}
                     </p>
                     <div class="article-cta">
-                      <a href="#" onclick="detailArticel(this)" data-id="${d.id}">Read More <i class="fas fa-chevron-right"></i></a>
+                      <a href="detail.html" onclick="detailArticel(this)" data-id="${d.id}">Read More <i class="fas fa-chevron-right"></i></a>
                     </div>
                   </div>
                 </article>
@@ -178,7 +147,12 @@ function myTemplate(data) {
 function detailArticel(e) {
   const id = e.getAttribute("data-id");
   window.localStorage.setItem("id-detail-articel", id);
-  window.location.href = "detail.html";
+  //window.location.href = "detail.html";
+}
+function detailCategory(e) {
+  const category = e.getAttribute("data-category");
+  window.localStorage.setItem("detail-category", category);
+  //window.location.href = "detail.html";
 }
 function showRecentPost() {
   let articel = JSON.parse(window.localStorage.getItem("articel"));
@@ -192,7 +166,7 @@ function recentTemplate(data) {
     if (i < 5) {
       tmplt += `
           <li>
-            <a href="#" onclick="detailArticel(this)" data-id="${e.id}">
+            <a href="detail.html" onclick="detailArticel(this)" data-id="${e.id}">
               ${e.title}
             </a>
           </li>

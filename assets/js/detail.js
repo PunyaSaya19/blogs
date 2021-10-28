@@ -23,7 +23,17 @@ function showAllArticel() {
     console.log(articel);
     title.innerHTML = articel.title;
     category.innerHTML = "#" + articel.category;
-    tgl.innerHTML = articel.created_at;
+    tgl.innerHTML = convertDate(articel.created_at);
     img.setAttribute('src', `assets/img/category/${articel.image}`);
     content.innerHTML = articel.content;
+}
+
+function convertDate(data) {
+  const arr = data.split("-");
+  const arrBlnIndo = [
+    "Januari", "Febuari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+  ];
+  let bln = parseInt(arr[1]) - 1;
+  bln = arrBlnIndo[bln];
+  return `${arr[2]} ${bln} ${arr[0]}`;
 }

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    scroll-behavior: smooth;
+}
+
+#my-navbar {
+    background: #113CFC;
+}
+#my-navbar a {
+    color: #fff !important;
+    text-decoration: none;
+}
+#my-navbar a h6 {
+    font-weight: 500;
+}
+
+/* mobile */
+@media(max-width : 768px) {
+}
+
+
+
+
+
+
