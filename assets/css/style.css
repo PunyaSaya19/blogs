@@ -111,6 +111,14 @@ body {
   padding: 10px 28px;
 }
 
+footer.my-footer {
+  border-top: 2px solid #aaa;
+  padding: 10px 28px;
+  color: rgb(255, 254, 254);
+  font-size: 12px;
+  background: #000;
+}
+
 /* mobile */
 @media(max-width : 768px){
   .my-navbar{

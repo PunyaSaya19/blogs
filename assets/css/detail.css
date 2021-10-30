@@ -4,6 +4,9 @@
     scroll-behavior: smooth;
 }
 
+body {
+    min-height: 100vh;
+}
 #my-navbar {
     background: #113CFC;
 }
@@ -43,6 +46,11 @@
     height: 300px;
     border-radius: 20px;
     margin-bottom: 30px;
+}
+
+footer.my-footer {
+    color: rgb(92, 88, 88);
+    font-size: 12px;
 }
 
 /* mobile */

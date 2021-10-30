@@ -3,7 +3,8 @@ const my_navbar = document.getElementById("my-navbar");
 const cek_artikel = window.localStorage.getItem("articel");
 const cek_category = window.localStorage.getItem("category");
 const row_blog_content = document.getElementById("row-blog-content");
-const recent_post = document.getElementById("recent-post");
+const wadah_category = document.getElementById("wadah-category");
+//const recent_post = document.getElementById("recent-post");
 const search_input = document.getElementById('search-field');
 const blog_banner = document.getElementById("blog-banner");
 
@@ -24,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     createFirstCategory();
   }
   showAllArticel();
-  showRecentPost();
+  showAllCategory();
 })
 
 
@@ -83,12 +84,12 @@ function createFirstArticel() {
 function createFirstCategory() {
   const data = JSON.stringify(["other", "programing", "music", "news"]);
   window.localStorage.setItem("category", data);
-  
+
 }
 function showAllArticel() {
   let articel = JSON.parse(window.localStorage.getItem("articel"));
   row_blog_content.innerHTML = "";
-  row_blog_content.innerHTML = myTemplate(articel);
+  row_blog_content.innerHTML = myTemplate(articel.reverse());
 }
 function convertDate(data) {
   const arr = data.split("-");
@@ -154,27 +155,27 @@ function detailCategory(e) {
   window.localStorage.setItem("detail-category", category);
   //window.location.href = "detail.html";
 }
-function showRecentPost() {
-  let articel = JSON.parse(window.localStorage.getItem("articel"));
-  articel = articel.reverse();
-  recent_post.innerHTML = "";
-  recent_post.innerHTML = recentTemplate(articel);
-}
-function recentTemplate(data) {
-  let tmplt = ``;
-  data.forEach((e, i) => {
-    if (i < 5) {
-      tmplt += `
-          <li>
-            <a href="detail.html" onclick="detailArticel(this)" data-id="${e.id}">
-              ${e.title}
-            </a>
-          </li>
-      `;
-    }
-  })
-  return tmplt;
-}
+// function showRecentPost() {
+//   let articel = JSON.parse(window.localStorage.getItem("articel"));
+//   articel = articel.reverse();
+//   recent_post.innerHTML = "";
+//   recent_post.innerHTML = recentTemplate(articel);
+// }
+// function recentTemplate(data) {
+//   let tmplt = ``;
+//   data.forEach((e, i) => {
+//     if (i < 5) {
+//       tmplt += `
+//           <li>
+//             <a href="detail.html" onclick="detailArticel(this)" data-id="${e.id}">
+//               ${e.title}
+//             </a>
+//           </li>
+//       `;
+//     }
+//   })
+//   return tmplt;
+// }
 function searchBlogs() {
   const search_query = search_input.value.toLowerCase();
   const all_articel = JSON.parse(window.localStorage.getItem('articel'));
@@ -200,4 +201,21 @@ function searchBlogs() {
     row_blog_content.innerHTML = myTemplate(articels);
   }
   window.scrollTo(0, blog_banner.clientHeight);
+}
+function showAllCategory() {
+  const allCategory = JSON.parse(window.localStorage.getItem('category'));
+  wadah_category.innerHTML = categoryTemplate(allCategory.sort())
+
+}
+
+function categoryTemplate(data) {
+  let tmplt = '';
+  data.forEach((e) => {
+    tmplt += `
+      <a href="category.html" data-category="${e}" onclick="detailCategory(this)" class="btn btn-outline-info m-1">
+        ${e}
+      </a>
+    `;
+  });
+  return tmplt;
 }
