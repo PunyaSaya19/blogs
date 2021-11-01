@@ -20,13 +20,25 @@
 </head>
 
 <body>
-  <nav id="my-navbar" class="py-2 mb-3">
-    <div class="container d-flex justify-content-start">
-      <a href="index.html">
-        <h4 class="mb-0">PunyaSaya</h4>
-        <h6 class="text-center">Blogs</h6>
-      </a>
+  <nav class=" my-navbar mb-2 " id="my-navbar">
+    <div class="container d-flex justify-content-between">
+      <div class="nav-head">
+        <a href="index.html">
+          <h4 class="mb-0">
+            PunyaSaya
+          </h4>
+          <h6 class="text-center">
+            Blogs
+          </h6>
+        </a>
+      </div>
+      <div class="nav-info">
+        <a href="admin/create-post.html" data-toggle="tooltip" data-placement="bottom" title="Create New Articel">
+          <i class="fas fa-plus-circle text-white"></i>
+        </a>
+      </div>
     </div>
+
   </nav>
 
   <div class="container" id="section-blog">
@@ -44,28 +56,49 @@
       <img src="assets/img/category/other.jpg" alt="img blog" class="w-100" id="blog-img">
     </div>
 
-    <div class="blog-content" id="blog-content">
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ducimus suscipit delectus repudiandae,
-        praesentium culpa dignissimos temporibus hic. Quasi maxime ipsum eligendi ab quia repellat deleniti. Temporibus
-        possimus explicabo perspiciatis beatae saepe repudiandae eum provident dolor, iste aliquam voluptas laborum
-        consequatur laudantium reiciendis quaerat nesciunt earum voluptatum dolore. Officia, soluta!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cupiditate eveniet quod accusantium repellat qui
-        illum nostrum nam reprehenderit earum sed aspernatur libero mollitia, molestias odio dolore rem tempora facilis
-        necessitatibus beatae fugit et non, veritatis odit. Ab, quos sequi vitae rerum ea consectetur qui,
-        exercitationem quisquam nostrum assumenda id tenetur ut iusto voluptatum ipsa dolorum. Assumenda beatae,
-        suscipit quos voluptates, quae, expedita consequuntur aliquid accusantium error delectus quis quam labore
-        deleniti tempora sequi ex!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab officia nobis minima perspiciatis, itaque
-        fugit eaque exercitationem maxime praesentium. Sint veritatis impedit repellendus similique facilis! Itaque
-        quaerat aliquam rem sed placeat modi sint, hic quidem exercitationem, architecto officia? In doloribus animi
-        repudiandae sint possimus. Voluptate voluptatibus, placeat quo minus magnam aperiam vitae suscipit quas quos
-        similique maxime esse porro adipisci consequatur quibusdam expedita temporibus in rem!
-      </p>
+    <div class="row">
+      <div class="col-md-8 col-sm-12 pt-2">
+        <div class="blog-content" id="blog-content">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ducimus suscipit delectus repudiandae,
+            praesentium culpa dignissimos temporibus hic. Quasi maxime ipsum eligendi ab quia repellat deleniti.
+            Temporibus
+            possimus explicabo perspiciatis beatae saepe repudiandae eum provident dolor, iste aliquam voluptas laborum
+            consequatur laudantium reiciendis quaerat nesciunt earum voluptatum dolore. Officia, soluta!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cupiditate eveniet quod accusantium repellat
+            qui
+            illum nostrum nam reprehenderit earum sed aspernatur libero mollitia, molestias odio dolore rem tempora
+            facilis
+            necessitatibus beatae fugit et non, veritatis odit. Ab, quos sequi vitae rerum ea consectetur qui,
+            exercitationem quisquam nostrum assumenda id tenetur ut iusto voluptatum ipsa dolorum. Assumenda beatae,
+            suscipit quos voluptates, quae, expedita consequuntur aliquid accusantium error delectus quis quam labore
+            deleniti tempora sequi ex!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab officia nobis minima perspiciatis, itaque
+            fugit eaque exercitationem maxime praesentium. Sint veritatis impedit repellendus similique facilis! Itaque
+            quaerat aliquam rem sed placeat modi sint, hic quidem exercitationem, architecto officia? In doloribus animi
+            repudiandae sint possimus. Voluptate voluptatibus, placeat quo minus magnam aperiam vitae suscipit quas quos
+            similique maxime esse porro adipisci consequatur quibusdam expedita temporibus in rem!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12 bg-white pt-2 rounded shadow-sm">
+        <h6 class="text-center mb-0">
+          Recent Post
+        </h6>
+        <hr class="w-100 mt-2 mb-2">
+        <ul id="recent-post">
+          <li>
+            <a href="detail.html" onclick="detailArticel(this)" data-id="">
+              Lorem ipsum dolor sit amet.
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
   </div>

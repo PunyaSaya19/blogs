@@ -3,11 +3,13 @@ const category = document.getElementById('blog-category');
 const tgl = document.getElementById('blog-tgl');
 const img = document.getElementById('blog-img');
 const content = document.getElementById('blog-content');
+const recent_post = document.getElementById("recent-post");
 
 
 // action
 window.addEventListener("DOMContentLoaded", () => {
   showAllArticel();
+  showRecentPost();
 });
 
 // function
@@ -42,5 +44,33 @@ function convertDate(data) {
 function detailCategory(e) {
   const category = e.getAttribute("data-category");
   window.localStorage.setItem("detail-category", category);
+  //window.location.href = "detail.html";
+}
+
+function showRecentPost() {
+  let articel = JSON.parse(window.localStorage.getItem("articel"));
+  articel = articel.reverse();
+  recent_post.innerHTML = "";
+  recent_post.innerHTML = recentTemplate(articel);
+}
+function recentTemplate(data) {
+  let tmplt = ``;
+  data.forEach((e, i) => {
+    if (i < 5) {
+      tmplt += `
+          <li>
+            <a href="detail.html" onclick="detailArticel(this)" data-id="${e.id}">
+              ${e.title}
+            </a>
+          </li>
+      `;
+    }
+  })
+  return tmplt;
+}
+
+function detailArticel(e) {
+  const id = e.getAttribute("data-id");
+  window.localStorage.setItem("id-detail-articel", id);
   //window.location.href = "detail.html";
 }

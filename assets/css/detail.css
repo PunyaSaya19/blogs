@@ -7,16 +7,30 @@
 body {
     min-height: 100vh;
 }
-#my-navbar {
-    background: #113CFC;
-}
-#my-navbar a {
+.bg-navbar a {
     color: #fff !important;
     text-decoration: none;
-}
-#my-navbar a h6 {
+  }
+  .my-navbar{
+    padding: 10px 28px;
+    font-family: 'Nunito', Sans-Serif;
+    background: #113CFC !important;
+    color: #000;
+    z-index: 99999;
+    transition: 0.5s;
+  }
+  .my-navbar a {
+    text-decoration: none;
+    color: #fff ;
+  }
+  .nav-head h6{
     font-weight: 500;
-}
+  }
+  .nav-info i{
+    margin-top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
 
 #section-blog {
     font-family: 'Poppins', sans-serif;
