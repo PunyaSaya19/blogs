@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/btn-social-media.css">
   <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/iziToast/dist/css/iziToast.min.css">
 </head>
 
 <body>
@@ -83,7 +84,7 @@
                     <div class="card-header">
                       <h4>Total Articel</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="div-total-articel">
                       10
                     </div>
                   </div>
@@ -98,7 +99,7 @@
                     <div class="card-header">
                       <h4>Total Category</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="div-total-category">
                       10
                     </div>
                   </div>
@@ -141,7 +142,7 @@
                             <td>
                               Welcome To PunyaSaya Blogs
                               <div class="table-links">
-                                <a href="../detail.html">View</a>
+                                <a href="../detail.html" onclick="detailArticel(this)" data-id="">View</a>
                                 <div class="bullet"></div>
                                 <a href="#">Edit</a>
                                 <div class="bullet"></div>
@@ -210,6 +211,7 @@
   <script src="../assets/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../assets/iziToast/dist/js/iziToast.min.js"></script>
   <script src="../assets/js/stisla.js"></script>
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/dashboard.js"></script>

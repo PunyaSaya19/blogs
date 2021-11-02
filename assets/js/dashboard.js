@@ -1,11 +1,15 @@
 // inisialisasi variabel 
 const iCategory = document.getElementById('input-category');
 const listCategory = document.getElementById('list-category');
+const divTotalCategory = document.getElementById("div-total-category");
+const divTotalArticel = document.getElementById("div-total-articel");
 
 // action
 window.addEventListener("DOMContentLoaded", () => {
     cekLogin();
     showListCategory();
+    showTotalArticel()
+    showTotalcategory();
 });
 
 // function
@@ -17,11 +21,42 @@ function cekLogin() {
     }
 }
 
+function showTotalcategory() {
+    const allCategory = JSON.parse(window.localStorage.getItem('category'));
+    divTotalCategory.innerText = allCategory.length;
+}
+
+function showTotalArticel() {
+    const allArticel = JSON.parse(window.localStorage.getItem('articel'));
+    divTotalArticel.innerText = allArticel.length;
+}
+
+function showNotify(msg, color = "green", icon = "fas fa-check") {
+    iziToast.show({
+        title: msg,
+        color: color,
+        icon: icon,
+        position: "topRight",
+    });
+}
+
 function addCategory() {
     if (iCategory.value == "") {
-        alert("Please Fill Category Input");
+        // alert("Please Fill Category Input");
+        showNotify("Please Fill Category Input", 'yellow', "fas fa-exclamation-triangle")
         return false;
     }
+    const allCategory = JSON.parse(window.localStorage.getItem('category'));
+    if (allCategory.includes(iCategory.value.toLowerCase())) {
+        showNotify("This category already exists", 'yellow', "fas fa-exclamation-triangle")
+        return false;
+    }
+    allCategory.push(iCategory.value.toLowerCase());
+    window.localStorage.setItem("category", JSON.stringify(allCategory));
+    iCategory.value = "";
+    showNotify("New Category Has Been Add");
+    showListCategory();
+    showTotalcategory();
 }
 
 function showListCategory() {
@@ -43,7 +78,7 @@ function categoryTemplate(data) {
 }
 
 function removeCategory(e) {
-    const confirms = confirm('yalkin??');
+    const confirms = confirm('yakin??');
     if (!confirms) {
         return false;
     }
@@ -57,5 +92,13 @@ function removeCategory(e) {
     });
     // console.log(newCategory)
     window.localStorage.setItem('category', JSON.stringify(newCategory));
+    showNotify("Category Has Been Deleted");
     showListCategory();
+    showTotalcategory();
+}
+
+function detailArticel(e) {
+    const id = e.getAttribute("data-id");
+    window.localStorage.setItem("id-detail-articel", id);
+    //window.location.href = "detail.html";
 }
