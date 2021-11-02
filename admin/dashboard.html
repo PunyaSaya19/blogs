@@ -85,7 +85,7 @@
                       <h4>Total Articel</h4>
                     </div>
                     <div class="card-body" id="div-total-articel">
-                      10
+                      0
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@
                       <h4>Total Category</h4>
                     </div>
                     <div class="card-body" id="div-total-category">
-                      10
+                      0
                     </div>
                   </div>
                 </div>
@@ -144,9 +144,9 @@
                               <div class="table-links">
                                 <a href="../detail.html" onclick="detailArticel(this)" data-id="">View</a>
                                 <div class="bullet"></div>
-                                <a href="#">Edit</a>
+                                <a href="#" data-toggle="modal" data-target="#modalEdit" data-idArticel="" onclick="isiModalEdit(this)">Edit</a>
                                 <div class="bullet"></div>
-                                <a href="#" class="text-danger">Trash</a>
+                                <a href="#" class="text-danger" data-idArticel="" onclick="deleteArticel(this)">Trash</a>
                               </div>
                             </td>
                             <td>
@@ -202,6 +202,27 @@
       </footer>
     </div>
   </div>
+  
+<!-- Modal edit -->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- General JS Scripts -->
   <script src="../assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>

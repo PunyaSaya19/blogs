@@ -47,10 +47,10 @@ function myTemplate(data) {
                   <article class="article article-style-b">
                     <div class="article-header">
                       <!--
-                      <div class="article-image" data-background="assets/img/category/${d.image}">
+                      <div class="article-image" data-background="assets/img/articel/${d.image}">
                       </div>
                       -->
-                      <img src="assets/img/category/${d.image}" class="w-100">
+                      <img src="assets/img/articel/${d.image}" class="w-100">
                     </div>
                     <div class="article-details">
                       <div class="article-title">

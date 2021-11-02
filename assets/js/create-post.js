@@ -5,6 +5,7 @@ const content = document.getElementById("content");
 const btnSubmit = document.getElementById("btn-submit");
 const arrThumbnailArticel = [1, 2, 3, 4, 5, 6, 7, 8];
 const wadahThumbnail = document.getElementById("wadah-thumbnail");
+const divMsg = document.getElementById("div-msg");
 
 // action
 window.addEventListener("DOMContentLoaded", () => {
@@ -48,6 +49,10 @@ function addNewArticel() {
     const ttl = title.value;
     const ctg = category.value;
     const cntn = content.value;
+    if (ttl == "" || ctg == "" || cntn == "") {
+      showErrMsg();
+      return false;
+    }
     const datenow = getDateNow();
     const thumb = document.querySelector('input[name="thumbnail"]:checked').value;
     const newArticel = {
@@ -61,20 +66,16 @@ function addNewArticel() {
     const allArticel = JSON.parse(window.localStorage.getItem("articel"));
     allArticel.push(newArticel);
     window.localStorage.setItem('articel', JSON.stringify(allArticel));
-    alert("berhsil");
-
+    showMessage();
 }
 
 function showSummernote() {
     $('#content').summernote({
-        height: 150,
+        height: 350,
         toolbar: [
             // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear', 'fontsize']],
-            ['color', ['color']],
-            ['fontname', ['fontname']],
+            ['style', ['bold', 'italic', 'underline', 'clear']],
             ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
             ['view', ['fullscreen', 'codeview', 'redo']],
         ]
     });
@@ -124,4 +125,25 @@ function thumbnailTemplate(data) {
         `;
     });
     return tmplt;
+}
+
+function showMessage() {
+  Swal.fire(
+   'Congratulations!!',
+   'New Article Has Been Created',
+   'success'
+  ).then((result) => {
+    window.location.href = "dashboard.html";
+  });
+}
+
+function showErrMsg() {
+  divMsg.innerHTML = `
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Warning!!</strong> please fill in all input
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  `;
 }

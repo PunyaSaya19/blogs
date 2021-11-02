@@ -51,7 +51,7 @@ function createFirstArticel() {
       title: "Welcome To PunyaSaya Blogs",
       category: "other",
       created_at: getDateNow(),
-      image: "other.jpg",
+      image: "default.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
     },
     {
@@ -59,7 +59,7 @@ function createFirstArticel() {
       title: "Welcome To PunyaSaya Blogs 2 (category : programing)",
       category: "programing",
       created_at: getDateNow(),
-      image: "other.jpg",
+      image: "default.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
     },
     {
@@ -67,7 +67,7 @@ function createFirstArticel() {
       title: "Welcome To PunyaSaya Blogs 3 (category : programing)",
       category: "programing",
       created_at: getDateNow(),
-      image: "other.jpg",
+      image: "default.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p>"
     },
     {
@@ -75,7 +75,7 @@ function createFirstArticel() {
       title: "Welcome To PunyaSaya Blogs 4 (category : music)",
       category: "music",
       created_at: getDateNow(),
-      image: "other.jpg",
+      image: "default.jpg",
       content: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ducimus vero, voluptate iusto quod qui, aspernatur distinctio, praesentium totam ea quaerat laborum eum facere at!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque alias repellat dolorem consectetur corrupti. Temporibus incidunt reiciendis, sed, quidem ut natus excepturi numquam facilis beatae maiores minus autem nulla explicabo.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad!</p>"
     },
   ];
@@ -111,10 +111,10 @@ function myTemplate(data) {
                 <article class="article article-style-b">
                   <div class="article-header">
                     <!--
-                    <div class="article-image" data-background="assets/img/category/${d.image}">
+                    <div class="article-image" data-background="assets/img/articel/${d.image}">
                     </div>
                     -->
-                    <img src="assets/img/category/${d.image}" class="w-100">
+                    <img src="assets/img/articel/${d.image}" class="w-100">
                   </div>
                   <div class="article-details">
                     <div class="article-title">

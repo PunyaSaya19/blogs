@@ -27,7 +27,7 @@ function showAllArticel() {
   category.innerHTML = "#" + articel.category;
   category.setAttribute('data-category', articel.category);
   tgl.innerHTML = convertDate(articel.created_at);
-  img.setAttribute('src', `assets/img/category/${articel.image}`);
+  img.setAttribute('src', `assets/img/articel/${articel.image}`);
   content.innerHTML = articel.content;
 }
 
