@@ -103,8 +103,11 @@ function convertDate(data) {
 function myTemplate(data) {
   let tmplt = "";
   data.forEach((d) => {
-    let content = d.content.substr(3, 75);
-    content += "...";
+    // let content = d.content.substr(0, 75);
+    // console.log(content);
+    // content += "...";
+    // content.replace(/<br>|<b>|<ul>|<li>/g, "hkjadhsajdh");
+    // console.log(content);
     let dateInIndo = convertDate(d.created_at);
     tmplt += `
               <div class="col-12 col-md-4 col-lg-4">
@@ -132,9 +135,7 @@ function myTemplate(data) {
                        ${dateInIndo}
                       </p>
                    </div>
-                    <p>
-                      ${content}
-                    </p>
+                      <!- content -->
                     <div class="article-cta">
                       <a href="detail.html" onclick="detailArticel(this)" data-id="${d.id}">Read More <i class="fas fa-chevron-right"></i></a>
                     </div>

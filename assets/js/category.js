@@ -66,7 +66,7 @@ function myTemplate(data) {
                         </p>
                      </div>
                       <p>
-                        ${content}
+                      <!-- content -->
                       </p>
                       <div class="article-cta">
                         <a href="detail.html" onclick="detailArticel(this)" data-id="${d.id}">Read More <i class="fas fa-chevron-right"></i></a>

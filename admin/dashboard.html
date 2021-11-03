@@ -11,6 +11,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../assets/datatabel/datatables.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/stisla.css">
@@ -121,8 +122,8 @@
                     </div>
                   </div>
                   <div class="card-body pt-0">
-                    <div class="table-responsive">
-                      <table class="table table-striped">
+                    <div class="table-responsive" id="wadah-tabel">
+                      <table class="table table-striped" id="tables">
                         <thead>
                           <tr>
                             <th class="text-center">
@@ -144,9 +145,11 @@
                               <div class="table-links">
                                 <a href="../detail.html" onclick="detailArticel(this)" data-id="">View</a>
                                 <div class="bullet"></div>
-                                <a href="#" data-toggle="modal" data-target="#modalEdit" data-idArticel="" onclick="isiModalEdit(this)">Edit</a>
+                                <a href="#" data-toggle="modal" data-target="#modalEdit" data-idArticel=""
+                                  onclick="isiModalEdit(this)">Edit</a>
                                 <div class="bullet"></div>
-                                <a href="#" class="text-danger" data-idArticel="" onclick="deleteArticel(this)">Trash</a>
+                                <a href="#" class="text-danger" data-idArticel=""
+                                  onclick="deleteArticel(this)">Trash</a>
                               </div>
                             </td>
                             <td>
@@ -202,27 +205,27 @@
       </footer>
     </div>
   </div>
-  
-<!-- Modal edit -->
-<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+  <!-- Modal edit -->
+  <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- General JS Scripts -->
   <script src="../assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -233,6 +236,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="../assets/iziToast/dist/js/iziToast.min.js"></script>
+  <script src="../assets/datatabel/datatables.min.js"></script>
   <script src="../assets/js/stisla.js"></script>
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/dashboard.js"></script>
