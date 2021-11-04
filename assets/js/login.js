@@ -32,3 +32,10 @@ btnSubmit.addEventListener('click', (e) => {
     window.localStorage.setItem('login', 'true');
     window.location.href = "admin/dashboard.html";
 })
+
+window.addEventListener("DOMContentLoaded", () => {
+    const stslgn = window.localStorage.getItem("login");
+    if (stslgn == "true") {
+        window.location.href = "admin/dashboard.html"
+    }
+})

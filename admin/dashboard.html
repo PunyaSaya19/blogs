@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../assets/datatabel/datatables.min.css">
+  <link rel="stylesheet" href="../assets/summernote/summernote-bs4.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/stisla.css">
@@ -208,7 +209,7 @@
 
   <!-- Modal edit -->
   <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -216,13 +217,51 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <form action="#" method="POST"></form>
         <div class="modal-body">
-          ...
+          <input type="hidden" id="e-id-articel">
+          <div class="form-group row mb-4">
+            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+            <div class="col-sm-12 col-md-7">
+              <input type="text" class="form-control" id="e-title">
+            </div>
+          </div>
+          <div class="form-group row mb-4">
+            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+            <div class="col-sm-12 col-md-7">
+              <select class="form-control selectric" id="e-category">
+                <option>--select one--</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row mb-4">
+            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
+            <div class="col-sm-12 col-md-7">
+              <textarea id="e-content"></textarea>
+            </div>
+          </div>
+          <div class="form-group row mb-4">
+            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
+            <div class="col-sm-12 col-md-7">
+              <div class="row gutters-sm" id="wadah-thumbnail">
+                <div class="col-md-3 col-sm-4">
+                  <label class="imagecheck mb-4">
+                    <input name="thumbnail" type="radio" value="default.jpg" class="imagecheck-input" checked />
+                    <figure class="imagecheck-figure">
+                      <img src="../assets/img/articel/default.jpg" alt="}" class="imagecheck-image">
+                    </figure>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" id="btn-edit" class="btn btn-primary">Save changes</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
@@ -237,6 +276,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="../assets/iziToast/dist/js/iziToast.min.js"></script>
   <script src="../assets/datatabel/datatables.min.js"></script>
+  <script src="../assets/summernote/summernote-bs4.js"></script>
   <script src="../assets/js/stisla.js"></script>
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/dashboard.js"></script>

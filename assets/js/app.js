@@ -7,14 +7,18 @@ const wadah_category = document.getElementById("wadah-category");
 //const recent_post = document.getElementById("recent-post");
 const search_input = document.getElementById('search-field');
 const blog_banner = document.getElementById("blog-banner");
-
+const btnSearch = document.getElementById("my-btn-search");
+const myFormSearch = document.getElementById("my-form-search");
+const toTop = document.getElementById("to-top");
 
 // action
 window.onscroll = () => {
   if (window.pageYOffset > 0) {
     my_navbar.classList.add("bg-navbar");
+    toTop.classList.remove("d-none");
   } else {
     my_navbar.classList.remove("bg-navbar");
+    toTop.classList.add("d-none");
   }
 }
 window.addEventListener("DOMContentLoaded", () => {
@@ -28,6 +32,15 @@ window.addEventListener("DOMContentLoaded", () => {
   showAllCategory();
 })
 
+// btnSearch.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   searchBlogs();
+// })
+
+myFormSearch.addEventListener("submit", (e) => {
+  e.preventDefault();
+  searchBlogs();
+})
 
 // functions
 function randomId() {

@@ -41,11 +41,11 @@
 
   <div id="blog-banner">
     <div class="layer-banner"></div>
-    <form action="#" id="my-form-search" class="shadow">
+    <form action="" id="my-form-search" class="shadow" onsubmit="searchBlogs()">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search Blog Here..." id="search-field" autocomplete="off">
         <div class="input-group-prepend">
-          <div class="input-group-text bg-primary" id="my-btn-search" onclick="searchBlogs()">
+          <div class="input-group-text bg-primary" id="my-btn-search">
             <i class="fas fa-search text-white"></i>
           </div>
         </div>
@@ -169,6 +169,12 @@
       </div>
     </div>
   </section>
+
+  <div id="to-top" class="d-none">
+    <a href="#">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  </div>
 
   <footer class="my-footer">
     <div class="footer-left">

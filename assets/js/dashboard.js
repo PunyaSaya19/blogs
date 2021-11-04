@@ -4,6 +4,13 @@ const listCategory = document.getElementById('list-category');
 const divTotalCategory = document.getElementById("div-total-category");
 const divTotalArticel = document.getElementById("div-total-articel");
 const wadahTabel = document.getElementById("wadah-tabel");
+const eTitle = document.getElementById("e-title");
+const eCategory = document.getElementById("e-category");
+const eContent = document.getElementById("e-content");
+const btnEdit = document.getElementById("btn-edit");
+const arrThumbnailArticel = [1, 2, 3, 4, 5, 6, 7, 8];
+const wadahThumbnail = document.getElementById("wadah-thumbnail");
+const eIdArticel = document.getElementById("e-id-articel")
 
 // action
 window.addEventListener("DOMContentLoaded", () => {
@@ -13,6 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
     showTotalArticel()
     showTotalcategory();
 });
+
+btnEdit.addEventListener("click", (e) => {
+    e.preventDefault();
+    updateArticel();
+})
 
 // function
 function cekLogin() {
@@ -69,6 +81,7 @@ function showListCategory() {
 
 function showListArticel() {
     const allArticel = JSON.parse(window.localStorage.getItem("articel"));
+    console.log(allArticel)
     wadahTabel.innerHTML = "";
     wadahTabel.innerHTML = articelTemplate(allArticel.sort());
     $('#tables').DataTable();
@@ -191,4 +204,122 @@ function deleteArticel(e) {
     window.localStorage.setItem("articel", JSON.stringify(newArticel));
     showNotify("Success Delete Articel!!");
     showListArticel();
+}
+
+function isiModalEdit(e) {
+    const idArticel = e.getAttribute("data-idArticel");
+    let thsArticel = {};
+    let indx = 0;
+    const allArticel = JSON.parse(window.localStorage.getItem("articel"));
+    allArticel.forEach((el, i) => {
+        if (el.id == idArticel) {
+            thsArticel = el;
+            indx = i;
+        }
+    });
+    showThumbnail(thsArticel.image);
+    showEditCategory(thsArticel.category);
+    showAllVal(thsArticel);
+}
+
+function showThumbnail(val) {
+    let nVal = val.split(".");
+    nVal = nVal[0];
+    console.log(nVal);
+    wadahThumbnail.innerHTML = "";
+    wadahThumbnail.innerHTML = thumbnailTemplate(arrThumbnailArticel, nVal);
+}
+
+function showEditCategory(val) {
+    const allCategory = JSON.parse(window.localStorage.getItem("category"));
+    eCategory.innerHTML = categoryEditTemplate(allCategory.sort(), val);
+}
+
+function showAllVal(e) {
+    eIdArticel.value = e.id;
+    eTitle.value = e.title;
+    eContent.innerHTML = "";
+    eContent.innerHTML = e.content;
+    showSummernote();
+}
+
+function thumbnailTemplate(data, val) {
+    let tmplt = `
+    <div class="col-md-3 col-sm-4">
+    <label class="imagecheck mb-4">
+      <input name="thumbnail" type="radio" value="default.jpg" class="imagecheck-input"
+        ${(val == "default") ? 'checked' : ''} />
+      <figure class="imagecheck-figure">
+        <img src="../assets/img/articel/default.jpg" alt="}" class="imagecheck-image">
+      </figure>
+    </label>
+  </div>
+    `;
+    data.forEach((e) => {
+        tmplt += `
+        <div class="col-md-3 col-sm-4">
+        <label class="imagecheck mb-4">
+          <input name="thumbnail" type="radio" value="${e}.jpg" class="imagecheck-input" ${(e == val) ? 'checked' : ''}/>
+          <figure class="imagecheck-figure">
+            <img src="../assets/img/articel/${e}.jpg" alt="}" class="imagecheck-image">
+          </figure>
+        </label>
+      </div>
+        `;
+    });
+    return tmplt;
+}
+
+function categoryEditTemplate(data, val) {
+    let tmplt = "";
+    data.forEach((e) => {
+        tmplt += `
+        <option value="${e}" ${(e == val) ? 'selected' : ''}>${e}</option>
+        `;
+    });
+    return tmplt;
+}
+
+function showSummernote() {
+    $("#e-content").summernote({
+        height: 350,
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['view', ['fullscreen', 'codeview', 'redo']],
+        ]
+    });
+}
+
+function nwArticel(data) {
+    const nThumb = document.querySelector('input[name="thumbnail"]:checked').value;
+    const nTitle = eTitle.value;
+    const nCategory = eCategory.value;
+    const nContent = eContent.value;
+    data.title = nTitle;
+    data.category = nCategory;
+    data.image = nThumb;
+    data.content = nContent;
+    return data;
+}
+
+function updateArticel() {
+    const idArticel = eIdArticel.value;
+    let thsArticel = {};
+    let indx = 0;
+    const allArticel = JSON.parse(window.localStorage.getItem("articel"));
+    allArticel.forEach((el, i) => {
+        if (el.id == idArticel) {
+            thsArticel = el;
+            indx = i;
+        }
+    });
+    const articelnw = nwArticel(thsArticel);
+    console.log(articelnw);
+    allArticel[indx] = articelnw;
+    window.localStorage.setItem("articel", JSON.stringify(allArticel));
+    showListArticel();
+    $('#modalEdit').modal('hide')
+    showNotify("success update articel")
 }
